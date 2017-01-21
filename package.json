@@ -1,0 +1,27 @@
+{
+  "name": "tdd",
+  "version": "1.0.0",
+  "description": "tdd",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ulisesantana/tdd.git"
+  },
+  "keywords": [
+    "tdd"
+  ],
+  "author": "Ulises Santana <ulisesantana@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ulisesantana/tdd/issues"
+  },
+  "homepage": "https://github.com/ulisesantana/tdd#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "expect.js": "^0.3.1",
+    "mocha": "^3.2.0"
+  }
+}
