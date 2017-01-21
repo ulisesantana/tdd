@@ -1,0 +1,29 @@
+
+> tdd@1.0.0 test /home/ulisesantana/apps/tdd
+> mocha
+
+
+
+  Order
+    .beers
+      ✓ should be a string
+
+  getBigger
+    .bigger
+      ✓ returns the biggest when is b
+
+  Números romanos
+    1) Debe devolver un I
+    2) Debe devolver un II
+    3) Debe devolver un III
+    ✓ Debe devolver un V
+    4) Debe devolver un VIII
+    5) Debe devolver un X
+    6) Debe devolver un XI
+    ✓ Debe devolver un XV
+    7) Debe devolver un XX
+    8) Debe devolver un XXI
+    ✓ Debe devolver un XXV
+    9) Debe devolver un XXX
+    10) Debe devolver un XXXI
+    ✓ Debe devolver un XXXV
