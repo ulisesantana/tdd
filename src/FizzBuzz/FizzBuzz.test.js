@@ -84,5 +84,18 @@ describe('Tests para el FizzBuzz', function () {
     });
   });
 
+  describe("No deben ser FizzBuzz", function () {
+    const useCases = [18, 25, 88]
+
+    useCases.forEach((useCase) => {
+
+      it(`Caso de uso: ${useCase}`, function () {
+        let integer = new Integer(useCase);
+        let fb = new FizzBuzz();
+        assert.notDeepEqual(fb.validate(integer), fizzbuzz);
+      });
+    });
+  });
+
 
 });
