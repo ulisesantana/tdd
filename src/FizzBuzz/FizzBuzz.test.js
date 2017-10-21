@@ -1,5 +1,6 @@
 const FizzBuzz = require('./FizzBuzz.js');
 const Integer = require('./Integer');
+const StringWrapper = require('./StringWrapper');
 const assert = require('assert');
 
 describe('Tests para el FizzBuzz', function(){
@@ -17,8 +18,9 @@ describe('Tests para el FizzBuzz', function(){
 
   it('Debe ser un Fizz', function(){
     let three = new Integer(3);
+    let fizz = new StringWrapper("Fizz");
     let fb = new FizzBuzz();
-    assert.equal(fb.validate(three), "Fizz");
+    assert.deepEqual(fb.validate(three), fizz);
   });
   
   
