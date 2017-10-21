@@ -7,6 +7,7 @@ describe('Tests para el FizzBuzz', function () {
 
   const fizz = new StringWrapper("Fizz");
   const buzz = new StringWrapper("Buzz");
+  const fizzbuzz = new StringWrapper("FizzBuzz");
 
   it('Debe ser un true', function () {
     assert.equal(true, true);
@@ -69,5 +70,19 @@ describe('Tests para el FizzBuzz', function () {
       });
     });
   });
+
+  describe("Deben ser FizzBuzz", function () {
+    const useCases = [15, 300, 45]
+
+    useCases.forEach((useCase) => {
+
+      it(`Caso de uso: ${useCase}`, function () {
+        let integer = new Integer(useCase);
+        let fb = new FizzBuzz();
+        assert.deepEqual(fb.validate(integer), fizzbuzz);
+      });
+    });
+  });
+
 
 });
