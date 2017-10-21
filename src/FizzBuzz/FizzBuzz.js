@@ -1,17 +1,16 @@
 const StringWrapper = require('./StringWrapper');
-const Integer = require('./Integer');
-
+const NumberWrapper = require('./NumberWrapper');
 
 class FizzBuzz {
   constructor() {
 
   }
 
-  validate(integer) {
-    if (integer.isDivisibleBy(new Integer(15))) return (new StringWrapper("FizzBuzz"));
-    if (integer.isDivisibleBy(new Integer(5))) return (new StringWrapper("Buzz"));
-    if (integer.isDivisibleBy(new Integer(3))) return (new StringWrapper("Fizz"));
-    return integer;
+  validate(number) {
+    if (number.isDivisibleBy(new NumberWrapper(15))) return (new StringWrapper("FizzBuzz"));
+    if (number.isDivisibleBy(new NumberWrapper(5))) return (new StringWrapper("Buzz"));
+    if (number.isDivisibleBy(new NumberWrapper(3))) return (new StringWrapper("Fizz"));
+    return number;
   }
 
 

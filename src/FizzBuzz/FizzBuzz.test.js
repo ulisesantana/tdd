@@ -1,5 +1,5 @@
 const FizzBuzz = require('./FizzBuzz.js');
-const Integer = require('./Integer');
+const NumberWrapper = require('./NumberWrapper');
 const StringWrapper = require('./StringWrapper');
 const assert = require('assert');
 
@@ -13,8 +13,8 @@ describe('Tests para el FizzBuzz', function () {
     assert.equal(true, true);
   });
 
-  it('Debe ser un Integer(1)', function () {
-    let one = new Integer(1);
+  it('Debe ser un NumberWrapper(1)', function () {
+    let one = new NumberWrapper(1);
     let fb = new FizzBuzz();
     assert.equal(fb.validate(one), one);
   });
@@ -25,9 +25,9 @@ describe('Tests para el FizzBuzz', function () {
     useCases.forEach((useCase) => {
 
       it(`Caso de uso: ${useCase}`, function () {
-        let integer = new Integer(useCase);
+        let number = new NumberWrapper(useCase);
         let fb = new FizzBuzz();
-        assert.deepEqual(fb.validate(integer), fizz);
+        assert.deepEqual(fb.validate(number), fizz);
       });
     });
   });
@@ -38,9 +38,9 @@ describe('Tests para el FizzBuzz', function () {
     useCases.forEach((useCase) => {
 
       it(`Caso de uso: ${useCase}`, function () {
-        let integer = new Integer(useCase);
+        let number = new NumberWrapper(useCase);
         let fb = new FizzBuzz();
-        assert.notDeepEqual(fb.validate(integer), fizz);
+        assert.notDeepEqual(fb.validate(number), fizz);
       });
     });
   });
@@ -51,9 +51,9 @@ describe('Tests para el FizzBuzz', function () {
     useCases.forEach((useCase) => {
 
       it(`Caso de uso: ${useCase}`, function () {
-        let integer = new Integer(useCase);
+        let number = new NumberWrapper(useCase);
         let fb = new FizzBuzz();
-        assert.deepEqual(fb.validate(integer), buzz);
+        assert.deepEqual(fb.validate(number), buzz);
       });
     });
   });
@@ -64,9 +64,9 @@ describe('Tests para el FizzBuzz', function () {
     useCases.forEach((useCase) => {
 
       it(`Caso de uso: ${useCase}`, function () {
-        let integer = new Integer(useCase);
+        let number = new NumberWrapper(useCase);
         let fb = new FizzBuzz();
-        assert.notDeepEqual(fb.validate(integer), buzz);
+        assert.notDeepEqual(fb.validate(number), buzz);
       });
     });
   });
@@ -77,9 +77,9 @@ describe('Tests para el FizzBuzz', function () {
     useCases.forEach((useCase) => {
 
       it(`Caso de uso: ${useCase}`, function () {
-        let integer = new Integer(useCase);
+        let number = new NumberWrapper(useCase);
         let fb = new FizzBuzz();
-        assert.deepEqual(fb.validate(integer), fizzbuzz);
+        assert.deepEqual(fb.validate(number), fizzbuzz);
       });
     });
   });
@@ -90,9 +90,9 @@ describe('Tests para el FizzBuzz', function () {
     useCases.forEach((useCase) => {
 
       it(`Caso de uso: ${useCase}`, function () {
-        let integer = new Integer(useCase);
+        let number = new NumberWrapper(useCase);
         let fb = new FizzBuzz();
-        assert.notDeepEqual(fb.validate(integer), fizzbuzz);
+        assert.notDeepEqual(fb.validate(number), fizzbuzz);
       });
     });
   });

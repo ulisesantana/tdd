@@ -1,7 +1,7 @@
-class StringWrapper{
-  constructor(string){
-    this.string=string;
+class StringWrapper extends String {
+  constructor(string) {
+    super(string);
   }
 }
 
-module.exports=StringWrapper;
+module.exports = StringWrapper;
