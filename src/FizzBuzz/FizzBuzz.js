@@ -4,7 +4,8 @@ class FizzBuzz{
   }
 
   validate(integer){
-    return integer.number;
+    if(integer.number===3) return "Fizz";
+    return integer;
   }
 
 
