@@ -3,8 +3,9 @@ class Integer {
     this.number = number;
   }
 
-  execute(callback) {
-    return callback(this.number);
+
+  isDivisibleBy( number){
+    return this.number % number === 0;
   }
 
 }

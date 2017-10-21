@@ -6,23 +6,12 @@ class FizzBuzz {
   }
 
   validate(integer) {
-    if (integer.execute(this.isFizzBuzz)) return (new StringWrapper("FizzBuzz"));
-    if (integer.execute(this.isBuzz)) return (new StringWrapper("Buzz"));
-    if (integer.execute(this.isFizz)) return (new StringWrapper("Fizz"));
+    if (integer.isDivisibleBy(15)) return (new StringWrapper("FizzBuzz"));
+    if (integer.isDivisibleBy(5)) return (new StringWrapper("Buzz"));
+    if (integer.isDivisibleBy(3)) return (new StringWrapper("Fizz"));
     return integer;
   }
 
-  isFizzBuzz(number){
-    return number % 15 === 0;
-  }
-
-  isBuzz(number) {
-    return number % 5 === 0;
-  }
-
-  isFizz(number) {
-    return number % 3 === 0;
-  }
 
 };
 
