@@ -4,7 +4,8 @@
   "description": "tdd",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive ./src"
+    "test": "mocha --recursive ./src",
+    "tasks": "gulp"
   },
   "repository": {
     "type": "git",
@@ -20,12 +21,15 @@
   },
   "homepage": "https://github.com/ulisesantana/tdd#readme",
   "devDependencies": {
-    "chai": "^3.5.0",
-    "expect.js": "^0.3.1",
     "gulp": "^3.9.1",
     "gulp-mocha": "^3.0.1",
     "gulp-util": "^3.0.8",
     "mocha": "^3.2.0",
     "sinon": "^1.17.7"
+  },
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-mocha": "^3.0.1",
+    "gulp-util": "^3.0.8"
   }
 }
