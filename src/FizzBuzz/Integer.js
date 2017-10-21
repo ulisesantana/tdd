@@ -1,6 +1,6 @@
 class Integer{
-  constructor(numero){
-    this.numero=numero;
+  constructor(number){
+    this.number=number;
   }
 }
 

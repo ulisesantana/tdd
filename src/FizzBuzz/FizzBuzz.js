@@ -4,7 +4,7 @@ class FizzBuzz{
   }
 
   validate(integer){
-    return integer;
+    return integer.number;
   }
 
 
