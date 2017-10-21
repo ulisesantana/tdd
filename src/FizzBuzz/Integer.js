@@ -4,8 +4,8 @@ class Integer {
   }
 
 
-  isDivisibleBy( number){
-    return this.number % number === 0;
+  isDivisibleBy( integer){
+    return this.number % integer.number === 0;
   }
 
 }
