@@ -44,15 +44,30 @@ describe('Tests para el FizzBuzz', function () {
     });
   });
 
-
   describe("Deben ser Buzz", function () {
-    it('Buzz para 5', function () {
-      let five = new Integer(5);
-      let fb = new FizzBuzz();
-      assert.deepEqual(fb.validate(five), buzz);
+    const useCases = [5, 20, 10]
+
+    useCases.forEach((useCase) => {
+
+      it(`Caso de uso: ${useCase}`, function () {
+        let integer = new Integer(useCase);
+        let fb = new FizzBuzz();
+        assert.deepEqual(fb.validate(integer), buzz);
+      });
     });
   });
 
+  describe("No deben ser Buzz", function () {
+    const useCases = [12, 8, 3];
 
+    useCases.forEach((useCase) => {
+
+      it(`Caso de uso: ${useCase}`, function () {
+        let integer = new Integer(useCase);
+        let fb = new FizzBuzz();
+        assert.notDeepEqual(fb.validate(integer), buzz);
+      });
+    });
+  });
 
 });
