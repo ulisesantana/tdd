@@ -5,6 +5,8 @@ const assert = require('assert');
 
 describe('Tests para el FizzBuzz', function(){
   
+  const fizz = new StringWrapper("Fizz");
+  const buzz = new StringWrapper("Buzz");
   
   it('Debe ser un true', function(){
     assert.equal(true, true);
@@ -18,9 +20,14 @@ describe('Tests para el FizzBuzz', function(){
 
   it('Debe ser un Fizz', function(){
     let three = new Integer(3);
-    let fizz = new StringWrapper("Fizz");
     let fb = new FizzBuzz();
     assert.deepEqual(fb.validate(three), fizz);
+  });
+
+  it('Debe ser un Buzz', function(){
+    let five = new Integer(5);
+    let fb = new FizzBuzz();
+    assert.deepEqual(fb.validate(five), buzz);
   });
   
   

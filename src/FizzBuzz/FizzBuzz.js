@@ -7,6 +7,7 @@ class FizzBuzz{
 
   validate(integer){
     if(integer.number===3) return (new StringWrapper("Fizz"));
+    if(integer.number===5) return (new StringWrapper("Buzz"));
     return integer;
   }
 
