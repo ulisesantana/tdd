@@ -1,14 +1,26 @@
+const gulp = require('gulp');
+const ts = require('gulp-typescript');
+const mocha = require('gulp-mocha');
+const gutil = require('gulp-util');
+const JSON_FILES = ['src/*.json', 'src/**/*.json'];
 
-var gulp = require('gulp');
-var mocha = require('gulp-mocha');
-var gutil = require('gulp-util');
+// pull in the project TypeScript config
+const tsProject = ts.createProject('tsconfig.json');
 
-gulp.task('default', function() {
-      gulp.watch(['src/**/**'], ['mocha']);
+gulp.task('scripts', () => {
+  const tsResult = tsProject.src()
+  .pipe(tsProject());
+  return tsResult.js.pipe(gulp.dest('dist'));
 });
 
-gulp.task('mocha', function() {
-    return gulp.src(['src/**/*.test.js'], { read: false })
-        .pipe(mocha({ reporter: 'list' }))
-        .on('error', gutil.log);
+gulp.task('watch', ['scripts'], () => {
+  gulp.watch('src/**/*.ts', ['scripts']);
 });
+
+gulp.task('assets', function() {
+  return gulp.src(JSON_FILES)
+  .pipe(gulp.dest('dist'));
+});
+
+gulp.task('default', ['watch', 'assets']);
+

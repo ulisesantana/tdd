@@ -4,32 +4,36 @@
   "description": "tdd",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --recursive ./src",
-    "tasks": "gulp"
+    "start": "node dist/index.js",
+    "build": "tsc",
+    "dev": "nodemon dist/index.js",
+    "tasks": "gulp",
+    "test": "mocha --require ts:ts-node/register 'src/**/*.test.ts'"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ulisesantana/tdd.git"
-  },
-  "keywords": [
-    "tdd"
-  ],
   "author": "Ulises Santana <ulisesantana@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ulisesantana/tdd/issues"
   },
   "homepage": "https://github.com/ulisesantana/tdd#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.1",
+    "morgan": "^1.9.0",
+    "typescript": "^2.5.3"
+  },
   "devDependencies": {
+    "@types/chai": "^4.0.4",
+    "@types/mocha": "^2.2.43",
+    "@types/node": "^8.0.34",
+    "chai": "^4.1.2",
     "gulp": "^3.9.1",
+    "gulp-typescript": "^3.1.1",
     "gulp-mocha": "^3.0.1",
     "gulp-util": "^3.0.8",
-    "mocha": "^3.2.0",
-    "sinon": "^1.17.7"
-  },
-  "dependencies": {
-    "gulp": "^3.9.1",
-    "gulp-mocha": "^3.0.1",
-    "gulp-util": "^3.0.8"
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1",
+    "ts-node": "^3.3.0"
   }
 }
