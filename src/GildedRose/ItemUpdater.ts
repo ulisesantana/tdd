@@ -1,4 +1,4 @@
-export default function itemUpdate(item) {
+export default function itemUpdatep(item) {
   if (!isAgedBrie(item) && !isBackstagePass(item)) {
     if (item.quality > 0) {
       if (!isSulfuras(item)) {
