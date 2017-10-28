@@ -1,5 +1,3 @@
-'use strict';
-
 import GildedRose from './GildedRose';
 import * as assert from 'assert';
 import Item from './Item';
