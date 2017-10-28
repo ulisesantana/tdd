@@ -12,63 +12,114 @@ describe('All Fizz Buzz Test', function () {
   });
 
   describe("Fizz", function () {
-    const useCases = [3, 6, 9];
-    const errorUseCases = [2, 4, 5];
-
+    const useCases = [
+      {
+        num: 3,
+        expect: fizz
+      },
+      {
+        num: 6,
+        expect: fizz
+      },
+      {
+        num: 9,
+        expect: fizz
+      },
+      {
+        num: 2,
+        expect: 2
+      },
+      {
+        num: 4,
+        expect: 4
+      },
+      {
+        num: 5,
+        expect: buzz,
+      }
+    ];
+  
     useCases.forEach((useCase) => {
-      it(`Should retrieve Fizz. Use case: ${useCase}`, function () {
+      let test = `Use case:  "${useCase.num}")`;
+      it(`Should retrieve ${useCase.expect}. ${test}`,  () => {
         let fb = new FizzBuzz();
-        assert.deepEqual(fb.validate(useCase), fizz);
+        assert.deepEqual(fb.validate(useCase.num), useCase.expect);
       });
     });
-
-    errorUseCases.forEach((useCase) => {
-      it(`Shouldn't retrieve Fizz. Use case: ${useCase}`, function () {
-        let fb = new FizzBuzz();
-        assert.notDeepEqual(fb.validate(useCase), fizz);
-      });
-    });
-
   });
 
   describe("Buzz", function () {
-    const useCases = [5, 20, 10]
-    const errorUseCases = [12, 8, 3];
-
+    const useCases = [
+      {
+        num: 5,
+        expect: buzz
+      },
+      {
+        num: 10,
+        expect: buzz
+      },
+      {
+        num: 20,
+        expect: buzz
+      },
+      {
+        num: 12,
+        expect: fizz
+      },
+      {
+        num: 8,
+        expect: 8
+      },
+      {
+        num: 3,
+        expect: fizz,
+      }
+    ];
+  
     useCases.forEach((useCase) => {
-      it(`Should retrieve Buzz. Use case: ${useCase}`, function () {
+      let test = `Use case:  "${useCase.num}")`;
+      it(`Should retrieve ${useCase.expect}. ${test}`,  () => {
         let fb = new FizzBuzz();
-        assert.deepEqual(fb.validate(useCase), buzz);
+        assert.deepEqual(fb.validate(useCase.num), useCase.expect);
       });
     });
-
-    errorUseCases.forEach((useCase) => {
-      it(`Shouldn't retrieve Buzz. Use case: ${useCase}`, function () {
-        let fb = new FizzBuzz();
-        assert.notDeepEqual(fb.validate(useCase), buzz);
-      });
-    });
-
   });
 
-  describe("Fizz Buzz", function () {
-    const useCases = [15, 300, 45]
-    const errorUseCases = [18, 25, 88]
-
+  describe("FizzBuzz", function () {
+    const useCases = [
+      {
+        num: 15,
+        expect: fizzbuzz
+      },
+      {
+        num: 300,
+        expect: fizzbuzz
+      },
+      {
+        num: 45,
+        expect: fizzbuzz
+      },
+      {
+        num: 18,
+        expect: fizz
+      },
+      {
+        num: 25,
+        expect: buzz
+      },
+      {
+        num: 88,
+        expect: 88,
+      }
+    ];
+  
     useCases.forEach((useCase) => {
-      it(`Should retrieve Fizz Buzz. Use case: ${useCase}`, function () {
+      let test = `Use case:  "${useCase.num}")`;
+      it(`Should retrieve ${useCase.expect}. ${test}`,  () => {
         let fb = new FizzBuzz();
-        assert.deepEqual(fb.validate(useCase), fizzbuzz);
+        assert.deepEqual(fb.validate(useCase.num), useCase.expect);
       });
     });
-
-    errorUseCases.forEach((useCase) => {
-      it(`Shouldn't retrieve Fizz Buzz. Use case: ${useCase}`, function () {
-        let fb = new FizzBuzz();
-        assert.notDeepEqual(fb.validate(useCase), fizzbuzz);
-      });
-    });
-
   });
 
 });
