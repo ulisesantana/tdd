@@ -57,9 +57,7 @@ export default class Item {
   }
 
   public decreaseSellIn(num: number = 1) {
-    if (this.sellIn > 0) {
-      this._sellIn.decrease(num);
-    }
+    this._sellIn.decrease(num);
   }
 
   private hasLessThanMaxQuality(): boolean {
