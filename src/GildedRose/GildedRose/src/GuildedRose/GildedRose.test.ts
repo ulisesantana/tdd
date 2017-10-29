@@ -1,6 +1,6 @@
 import GildedRose from './GildedRose';
 import * as assert from 'assert';
-import Item from './../Item/Item.factory';
+import Item from './../Item/Item';
 
 function passDay(item) {
   GildedRose([item]).updateQuality();

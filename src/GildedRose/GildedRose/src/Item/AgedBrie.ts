@@ -1,6 +1,6 @@
-import Item from './Item';
+import GenericItem from './GenericItem';
 
-export default class AgedBrie extends Item {
+export default class AgedBrie extends GenericItem {
   constructor(sellIn: number, quality: number) {
     super("Aged Brie", sellIn, quality);
   }

@@ -1,66 +1,27 @@
 import Counter from './../../lib/Counter/Counter'
+import GenericItem from './GenericItem';
+import AgedBrie from './AgedBrie';
+import BackstagePass from './BackstagePass';
+import Sulfuras from './Sulfuras';
+import Conjured from './Conjured';
 
-export default class Item {
-  _name: string;
-  _sellIn: Counter;
-  _quality: Counter;
+export default (name, sellIn = 1, quality = 1) => Item.factory(name,sellIn,quality);
 
-  constructor(name: string, sellIn: number = 1, quality: number = 1) {
-    quality = quality > 0 ? quality < 51 ? quality : 50 : 0;
-    sellIn > 0 ? sellIn : 0;
-    this._name = name;
-    this._sellIn = new Counter(sellIn);
-    this._quality = new Counter(quality);
-  }
-
-  get name(): string {
-    return this._name;
-  }
-
-  get sellIn(): number {
-    return this._sellIn.value;
-  }
-
-  get quality(): number {
-    return this._quality.value;
-  }
-
-  set quality(quality: number) {
-    this._quality.value = quality;
-  }
-
-  public print() {
-    return this.name + ", " + this.sellIn + ", " + this.quality;
-  }
-
-  public passDay(): void {
-    this.decreaseSellIn();
-
-    if (this.sellIn < 1) {
-      this.decreaseQuality(2);
-    } else {
-      this.decreaseQuality();
+export class Item {
+  constructor(){}
+  
+  static factory(name: string, sellIn: number = 1, quality: number = 1): GenericItem {
+    switch (name) {
+      case "Aged Brie":
+        return new AgedBrie(sellIn, quality);
+      case "Backstage passes to a TAFKAL80ETC concert":
+        return new BackstagePass(sellIn, quality);
+      case "Conjured":
+        return new Conjured(sellIn, quality);
+      case "Sulfuras, Hand of Ragnaros":
+        return new Sulfuras();
+      default:
+        return new GenericItem(name, sellIn, quality);
     }
-
-  }
-
-  public increaseQuality() {
-    if (this.hasLessThanMaxQuality()) {
-      this._quality.increase();
-    }
-  }
-
-  public decreaseQuality(num: number = 1) {
-    if (this.quality > 0) {
-      this._quality.decrease(num);
-    }
-  }
-
-  public decreaseSellIn(num: number = 1) {
-    this._sellIn.decrease(num);
-  }
-
-  private hasLessThanMaxQuality(): boolean {
-    return this.quality < 50
   }
 }

@@ -1,6 +1,6 @@
-import Item from './Item';
+import GenericItem from './GenericItem';
 
-export default class BackstagePass extends Item {
+export default class BackstagePass extends GenericItem {
   constructor(sellIn: number, quality: number) {
     super("Backstage passes to a TAFKAL80ETC concert", sellIn, quality);
   }

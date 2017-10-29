@@ -1,11 +1,11 @@
-import Item from '../Item/Item';
+import GenericItem from '../Item/GenericItem';
 
-export default (items: Item[]) => (new GildedRose(items));
+export default (items: GenericItem[]) => new GildedRose(items);
 
 export class GildedRose{
-  private store: Item[];
+  private store: GenericItem[];
 
-  constructor(items: Item[]){
+  constructor(items: GenericItem[]){
     this.store = items;
   }
 
