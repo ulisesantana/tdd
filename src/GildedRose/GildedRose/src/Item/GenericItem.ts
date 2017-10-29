@@ -1,9 +1,9 @@
 import Counter from './../../lib/Counter/Counter'
 
 export default class GenericItem {
-  _name: string;
-  _sellIn: Counter;
-  _quality: Counter;
+  private _name: string;
+  private _sellIn: Counter;
+  private _quality: Counter;
 
   constructor(name: string, sellIn: number = 1, quality: number = 1) {
     quality = quality > 0 ? (quality < 51 ? quality : 50) : 0;
